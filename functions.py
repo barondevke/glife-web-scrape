@@ -24,7 +24,7 @@ def create_lead(name, phone, address,email):
     address:address
 }
 
-  response = requests.post(url,json=leadData)
+  response = requests.post(url,leadData)
   if response.status_code == 200:
     print("Lead created successfully.")
     return response.json()
