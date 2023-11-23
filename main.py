@@ -71,7 +71,7 @@ def chat():
           # Process lead creation
           arguments = json.loads(tool_call.function.arguments)
           output = functions.create_lead(arguments["name"], arguments["phone"],
-                                         arguments["address"],arguments["email"])
+                                         arguments["address"])
           client.beta.threads.runs.submit_tool_outputs(thread_id=thread_id,
                                                        run_id=run.id,
                                                        tool_outputs=[{

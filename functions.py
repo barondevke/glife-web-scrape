@@ -15,11 +15,10 @@ client = OpenAI(api_key=OPEN_AI_KEY)
 
 
 # Add lead to Airtable
-def create_lead(name, phone, address,email):
+def create_lead(name, phone, address):
   url = ZAPIER_WEBHOOK 
   leadData ={
     name:name,
-    email:email,
     phone:phone,
     address:address
 }
