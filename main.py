@@ -5,16 +5,19 @@ from flask import Flask, request, jsonify
 import openai
 from openai import OpenAI
 import functions
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Check OpenAI version compatibility
 
-
+OPEN_AI_KEY = os.getenv('OPEN_AI_KEY')
 
 # Create Flask app
 app = Flask(__name__)
 
 # Initialize OpenAI client
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=OPEN_AI_KEY)
 
 # Create or load assistant
 assistant_id = functions.create_assistant(

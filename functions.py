@@ -3,16 +3,20 @@ import requests
 import os
 from openai import OpenAI
 from prompts import  assistant_instructions
+from dotenv import load_dotenv
 
+load_dotenv()
 
+OPEN_AI_KEY = os.getenv('OPEN_AI_KEY')
+ZAPIER_WEBHOOK = os.getenv('ZAPIER')
 
 # Init OpenAI Client
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=OPEN_AI_KEY)
 
 
 # Add lead to Airtable
 def create_lead(name, phone, address,email):
-  url = "https://hooks.zapier.com/hooks/catch/16920137/38p7uys/"  
+  url = ZAPIER_WEBHOOK 
   leadData ={
     name:name,
     email:email,
