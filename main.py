@@ -6,6 +6,8 @@ import openai
 from openai import OpenAI
 import functions
 from dotenv import load_dotenv
+import functions
+
 
 load_dotenv()
 
